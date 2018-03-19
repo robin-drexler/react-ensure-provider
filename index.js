@@ -6,7 +6,7 @@ export const resetProviderCounter = () => {
   count = 0;
 };
 
-export default (message = '', createContextFn = React.createContext) => {
+const createContext = (message = '', createContextFn = React.createContext) => {
   const key = `__ENSURE_PROVIDER__${count++}`;
   const Context = createContextFn(key);
   const Consumer = (props) => {
@@ -27,3 +27,11 @@ export default (message = '', createContextFn = React.createContext) => {
     Consumer: Consumer
   };
 };
+
+export const createContextFactory = (createContextFn) => {
+  return (message, overrideCreateContextFn = createContextFn) => {
+    return createContext(message, overrideCreateContextFn);
+  };
+};
+
+export default createContext;

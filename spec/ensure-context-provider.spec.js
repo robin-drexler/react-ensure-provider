@@ -3,7 +3,10 @@ import { render } from 'react-testing-library';
 
 import * as createReactContext from 'create-react-context';
 
-import createContext, { resetProviderCounter } from '../';
+import createContext, {
+  resetProviderCounter,
+  createContextFactory
+} from '../index.js';
 
 describe('ensure context provider', () => {
   beforeEach(() => {
@@ -105,9 +108,14 @@ describe('ensure context provider', () => {
     expect(container.querySelectorAll('span')[1].textContent).toEqual('second');
   });
 
-  it('allows to override createContext function', () => {
+  it('allows to use factory for createContext override function', () => {
     const spy = jest.spyOn(createReactContext, 'default');
-    const Context = createContext('first-error', createReactContext.default);
+
+    const customCreateContext = createContextFactory(
+      createReactContext.default
+    );
+
+    const Context = customCreateContext('first-error');
 
     const { container } = render(
       <div>
@@ -119,6 +127,26 @@ describe('ensure context provider', () => {
 
     expect(spy).toHaveBeenCalled();
     expect(container.querySelectorAll('span')[0].textContent).toEqual('first');
+  });
+
+  it('increases and resets keys', () => {
+    resetProviderCounter();
+    createContext('', (key) => {
+      expect(key).toMatch(/_0$/);
+      return { Provider: {} };
+    });
+
+    createContext('', (key) => {
+      expect(key).toMatch(/_1$/);
+      return { Provider: {} };
+    });
+
+    resetProviderCounter();
+
+    createContext('', (key) => {
+      expect(key).toMatch(/_0$/);
+      return { Provider: {} };
+    });
   });
 
   it('increases and resets keys', () => {
