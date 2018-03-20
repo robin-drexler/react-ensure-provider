@@ -24,6 +24,10 @@
     "test": "jest",
     "build": "microbundle build --jsx React.createElement"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robin-drexler/react-ensure-provider"
+  },
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
