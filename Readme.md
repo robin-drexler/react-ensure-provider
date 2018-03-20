@@ -17,7 +17,7 @@ This fine when there are sensible default values, for example if you create a Th
 
 However, projects, such as [redux](https://github.com/reactjs/react-redux/blob/master/docs/api.md#provider-store) use context to pass objects (or functions) that need to be configured and passed in by the user first and therefore can not have a default value.
 
-While one could provide a higher order component to do the check and throw an error. However, the new context api encourages the (in many cases) simpler render prop pattern.
+While one could provide a higher order component to do the check and throw an error, the new context api encourages the (in many cases) simpler render prop pattern.
 
 `react-ensure-provider` can help with that. It can be instead of `React.createContext`. The only difference is that the first argument is the error message that is thrown instead of a default value.
 
