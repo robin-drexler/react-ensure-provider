@@ -1,5 +1,7 @@
 {
   "name": "react-ensure-provider",
+  "description":
+    "Throw an error when `Context.Consumer` is rendered outside `Context.Provider`.",
   "version": "1.0.2",
   "source": "src/index.js",
   "main": "dist/index.js",
