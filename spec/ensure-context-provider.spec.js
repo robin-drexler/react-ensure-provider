@@ -3,10 +3,7 @@ import { render } from 'react-testing-library';
 
 import * as createReactContext from 'create-react-context';
 
-import createContext, {
-  resetProviderCounter,
-  createContextFactory
-} from '../src/index.js';
+import { createContext, createContextFactory } from '../src/index.js';
 
 describe('ensure context provider', () => {
   beforeEach(() => {
