@@ -6,7 +6,7 @@ import * as createReactContext from 'create-react-context';
 import createContext, {
   resetProviderCounter,
   createContextFactory
-} from '../index.js';
+} from '../src/index.js';
 
 describe('ensure context provider', () => {
   beforeEach(() => {
@@ -108,6 +108,23 @@ describe('ensure context provider', () => {
     expect(container.querySelectorAll('span')[1].textContent).toEqual('second');
   });
 
+  it('allows to override createContext override function', () => {
+    const spy = jest.spyOn(createReactContext, 'default');
+
+    const Context = createContext('first-error', createReactContext.default);
+
+    const { container } = render(
+      <div>
+        <Context.Provider value="first">
+          <Context.Consumer>{(value) => <span>{value}</span>}</Context.Consumer>
+        </Context.Provider>
+      </div>
+    );
+
+    expect(spy).toHaveBeenCalled();
+    expect(container.querySelectorAll('span')[0].textContent).toEqual('first');
+  });
+
   it('allows to use factory for createContext override function', () => {
     const spy = jest.spyOn(createReactContext, 'default');
 
@@ -127,45 +144,5 @@ describe('ensure context provider', () => {
 
     expect(spy).toHaveBeenCalled();
     expect(container.querySelectorAll('span')[0].textContent).toEqual('first');
-  });
-
-  it('increases and resets keys', () => {
-    resetProviderCounter();
-    createContext('', (key) => {
-      expect(key).toMatch(/_0$/);
-      return { Provider: {} };
-    });
-
-    createContext('', (key) => {
-      expect(key).toMatch(/_1$/);
-      return { Provider: {} };
-    });
-
-    resetProviderCounter();
-
-    createContext('', (key) => {
-      expect(key).toMatch(/_0$/);
-      return { Provider: {} };
-    });
-  });
-
-  it('increases and resets keys', () => {
-    resetProviderCounter();
-    createContext('', (key) => {
-      expect(key).toMatch(/_0$/);
-      return { Provider: {} };
-    });
-
-    createContext('', (key) => {
-      expect(key).toMatch(/_1$/);
-      return { Provider: {} };
-    });
-
-    resetProviderCounter();
-
-    createContext('', (key) => {
-      expect(key).toMatch(/_0$/);
-      return { Provider: {} };
-    });
   });
 });
