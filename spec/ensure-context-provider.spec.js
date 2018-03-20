@@ -105,6 +105,33 @@ describe('ensure context provider', () => {
     expect(container.querySelectorAll('span')[1].textContent).toEqual('second');
   });
 
+  it('renders and passes value with nested Providers of the same kind', () => {
+    const Context = createContext('first-error');
+    const SecondContext = createContext('second-error');
+
+    const { container } = render(
+      <div>
+        <Context.Provider value="first">
+          <Context.Consumer>
+            {(value) => (
+              <div>
+                <span>{value}</span>
+                <Context.Provider value="second">
+                  <Context.Consumer>
+                    {(value) => <span>{value}</span>}
+                  </Context.Consumer>
+                </Context.Provider>
+              </div>
+            )}
+          </Context.Consumer>
+        </Context.Provider>
+      </div>
+    );
+
+    expect(container.querySelectorAll('span')[0].textContent).toEqual('first');
+    expect(container.querySelectorAll('span')[1].textContent).toEqual('second');
+  });
+
   it('allows to override createContext override function', () => {
     const spy = jest.spyOn(createReactContext, 'default');
 
