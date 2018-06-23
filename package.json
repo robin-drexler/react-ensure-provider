@@ -1,8 +1,7 @@
 {
   "name": "react-ensure-provider",
-  "description":
-    "Throw an error when `Context.Consumer` is rendered outside `Context.Provider`.",
-  "version": "1.0.2",
+  "description": "Throw an error when `Context.Consumer` is rendered outside `Context.Provider`.",
+  "version": "1.0.3",
   "source": "src/index.js",
   "main": "dist/index.js",
   "module": "dist/index.m.js",
@@ -32,6 +31,8 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "dependencies": {}
 }
