@@ -7,17 +7,17 @@
   "module": "dist/index.m.js",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.0.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "create-react-context": "^0.2.1",
-    "jest": "^22.4.2",
-    "microbundle": "^0.4.4",
+    "babel-core": "6.26.0",
+    "babel-jest": "22.4.1",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "create-react-context": "0.2.1",
+    "jest": "22.4.2",
+    "microbundle": "0.4.4",
     "react": "16.3.0-alpha.2",
     "react-dom": "16.3.0-alpha.2",
-    "react-testing-library": "^1.0.1",
-    "regenerator-runtime": "^0.11.1"
+    "react-testing-library": "1.0.1",
+    "regenerator-runtime": "0.11.1"
   },
   "scripts": {
     "test": "jest",
