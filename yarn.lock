@@ -3838,9 +3838,11 @@ react-dom@16.3.0-alpha.2:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-testing-library@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-1.0.1.tgz#2f61c1f8383cd247a400ac85ebd5313f072d29a2"
+react-testing-library@1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-1.10.0.tgz#1e03e7b48cdf7f9ad87c22faa8ca0cb6b1794612"
+  dependencies:
+    wait-for-expect "0.4.0"
 
 react@16.3.0-alpha.2:
   version "16.3.0-alpha.2"
@@ -4782,6 +4784,10 @@ w3c-hr-time@^1.0.1:
   resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
   dependencies:
     browser-process-hrtime "^0.1.2"
+
+wait-for-expect@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/wait-for-expect/-/wait-for-expect-0.4.0.tgz#341c96ab89d6102a0169a9be6cd0de354de92c17"
 
 walker@~1.0.5:
   version "1.0.7"
