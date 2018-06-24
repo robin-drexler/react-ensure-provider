@@ -1,8 +1,6 @@
-import React from 'react';
-import { render } from 'react-testing-library';
-
 import * as createReactContext from 'create-react-context';
-
+import React from 'react';
+import { cleanup, render } from 'react-testing-library';
 import { createContext, createContextFactory } from '../src/index.js';
 
 describe('ensure context provider', () => {
@@ -11,6 +9,7 @@ describe('ensure context provider', () => {
   });
 
   afterEach(() => {
+    cleanup();
     global.console.error.mockRestore();
   });
 
