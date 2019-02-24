@@ -16,6 +16,16 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@babel/runtime@^7.1.5", "@babel/runtime@^7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.1.tgz#574b03e8e8a9898eaf4a872a92ea20b7846f6f2a"
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
+"@sheerun/mutationobserver-shim@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#8013f2af54a2b7d735f71560ff360d3a8176a87b"
+
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -109,6 +119,10 @@ ansi-regex@^2.0.0:
 ansi-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
+
+ansi-regex@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.0.0.tgz#70de791edf021404c3fd615aa89118ae0432e5a9"
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -1453,13 +1467,14 @@ diff@^3.2.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
 
-dom-testing-library@^3.1.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.4.0.tgz#6a0dbd714cf3c432a87846bf3b28d5f5a81bc845"
+dom-testing-library@^3.13.1:
+  version "3.16.8"
+  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.16.8.tgz#26549b249f131a25e4339ebec9fcaa2e7642527f"
   dependencies:
-    mutationobserver-shim "^0.3.2"
-    pretty-format "^22.4.3"
-    wait-for-expect "^0.4.0"
+    "@babel/runtime" "^7.1.5"
+    "@sheerun/mutationobserver-shim" "^0.3.2"
+    pretty-format "^24.0.0"
+    wait-for-expect "^1.1.0"
 
 domexception@^1.0.0:
   version "1.0.1"
@@ -3147,10 +3162,6 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-mutationobserver-shim@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#f4d5dae7a4971a2207914fb5a90ebd514b65acca"
-
 nan@^2.3.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
@@ -3802,18 +3813,18 @@ pretty-bytes@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
 
-pretty-format@^22.4.3:
-  version "22.4.3"
-  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-22.4.3.tgz#f873d780839a9c02e9664c8a082e9ee79eaac16f"
-  dependencies:
-    ansi-regex "^3.0.0"
-    ansi-styles "^3.2.0"
-
 pretty-format@^23.2.0:
   version "23.2.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-23.2.0.tgz#3b0aaa63c018a53583373c1cb3a5d96cc5e83017"
   dependencies:
     ansi-regex "^3.0.0"
+    ansi-styles "^3.2.0"
+
+pretty-format@^24.0.0:
+  version "24.0.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.0.0.tgz#cb6599fd73ac088e37ed682f61291e4678f48591"
+  dependencies:
+    ansi-regex "^4.0.0"
     ansi-styles "^3.2.0"
 
 private@^0.1.6, private@^0.1.7, private@^0.1.8:
@@ -3905,12 +3916,12 @@ react-dom@16.4.1:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-testing-library@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-5.0.1.tgz#b7bb205da19333477b6f92631286df98cad398b3"
+react-testing-library@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-6.0.0.tgz#81edfcfae8a795525f48685be9bf561df45bb35d"
   dependencies:
-    dom-testing-library "^3.1.0"
-    wait-for-expect "^1.0.0"
+    "@babel/runtime" "^7.3.1"
+    dom-testing-library "^3.13.1"
 
 react@16.4.1:
   version "16.4.1"
@@ -3983,6 +3994,10 @@ regenerator-runtime@^0.10.5:
 regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
+
+regenerator-runtime@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
 
 regenerator-transform@^0.10.0:
   version "0.10.1"
@@ -4862,13 +4877,9 @@ w3c-hr-time@^1.0.1:
   dependencies:
     browser-process-hrtime "^0.1.2"
 
-wait-for-expect@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/wait-for-expect/-/wait-for-expect-0.4.0.tgz#341c96ab89d6102a0169a9be6cd0de354de92c17"
-
-wait-for-expect@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/wait-for-expect/-/wait-for-expect-1.0.0.tgz#edf2d5790c36dc67c4e21ac6ccedd7d4b79dc6ac"
+wait-for-expect@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/wait-for-expect/-/wait-for-expect-1.1.0.tgz#6607375c3f79d32add35cd2c87ce13f351a3d453"
 
 walker@~1.0.5:
   version "1.0.7"
