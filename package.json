@@ -13,7 +13,7 @@
     "babel-preset-react": "6.24.1",
     "create-react-context": "0.2.3",
     "jest": "23.2.0",
-    "microbundle": "0.4.4",
+    "microbundle": "0.15.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-testing-library": "6.0.3",
